@@ -1,0 +1,93 @@
+$border: 3px solid #a40000;
+
+@font-face {
+    font-family: HelveticaCyrillicUpright;
+    src: url('../fonts/HelveticaCyrillicUpright.ttf')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+width: 100vw;
+height: 300px;
+display: flex;
+align-items: center;
+position: relative;
+box-sizing: border-box;
+border-left: $border;
+border-right: $border;
+border-bottom: $border;
+
+&::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../img/code.png);
+    background-size: cover;
+    filter: blur(1.75px) grayscale(90%) brightness(40%);
+}
+.photobox, .textbox {
+    position: relative;
+}
+
+.photobox {
+    height: 80%;
+    width: 40%;
+    left: 15%;
+    animation: rolling-right 2s ease-in-out;
+    @keyframes rolling-right {
+        0% {
+            left: -15%;
+        }
+        100% {
+            left: 15%;
+        }
+    }
+}
+img {
+    width: 200px;
+    height: 250px;
+    border-radius: 25%;
+}
+}
+
+.textbox {
+    font-family: HelveticaCyrillicUpright;
+    color: #fff;
+    // opacity: 0;
+    animation: fade 3s linear;
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .textbox-name {
+        text-decoration: underline;
+    }
+    .textbox-position {
+        font-style: italic;
+    }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border-right: $border;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+#tg {
+    width: 25px;
+    height: 25px;
+}
